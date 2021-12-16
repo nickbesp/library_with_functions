@@ -40,9 +40,9 @@ def matrix_x_matrix(m1, m2): #Умножение двух матриц (для 1
                 r.append(sums)
             m.append(r)
             r = []
+    return m
     else:
         return 'Error! This version does not work with matrices in which the number of rows of the first does not match the number of columns of the second! Try to find another algorithm or write your own.'
-    return m
 
 def amount_num_in_matrix(mat, num): #Количество чисел num в двумерном массиве mat
     k = 0
