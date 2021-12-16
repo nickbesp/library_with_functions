@@ -41,7 +41,7 @@ def matrix_x_matrix(m1, m2): #Умножение двух матриц (для 1
                 r.append(sums)
             m.append(r)
             r = []
-    return m
+        return m
     else:
         return err
 
