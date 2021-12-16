@@ -27,3 +27,16 @@ def amount_words(s): #количество слов в строке :)
         if s[i] == ' ' and s[i + 1] != ' ':
             k += 1
     return k
+
+def matrix_x_matrix(m1, m2): #Умножение двух матриц (для 10 класса)
+    r = []
+    m = []
+    for i in range(len(m1)):
+        for j in range(len(m2[0])):
+            sums = 0
+            for k in range(len(m2)):
+                sums += (m1[i][k] * m2[k][j])
+            r.append(sums)
+        m.append(r)
+        r = []
+    return m
