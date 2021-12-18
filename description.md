@@ -2,8 +2,8 @@
 
 Стандартным отклонением называется величина
 
-$$ σ = √((x1−s) ** 2 + (x2−s) ** 2 + … + (xn−s) ** 2 / n−1) $$
+$$ σ = \sqrt{\frac{(x1−s) ^ 2 + (x2−s) ^ 2 + … + (xn−s) ^ 2}{n-1}} $$
 
-где  $s = (x1 + x2 + … + xn) / n$ — среднее арифметическое последовательности.
+где  $s = \frac{x1 + x2 + … + xn}{n}$ — среднее арифметическое последовательности.
 
-https://www.nexus.ua/images/info/standarddeviation.png
+![ формула стандартного отклонения ](https://4analytics.ru/images/stories/Articles/srednekvadr_okl_dispersiya/srednekvadraticheskoe_otklonenie.jpg)
