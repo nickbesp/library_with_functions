@@ -1,18 +1,18 @@
-def large(arr): #max() 
-    max_ = arr[0]
-    for ele in arr:
-        if ele > max_:
-            max_ = ele
+def maxi(mass): #максимальное число в массиве 
+    max_ = mass[0]
+    for elem in mass:
+        if elem > max_:
+            max_ = elem
     return max_
 
-def in_dec_num_syst(x, syst): #перевод в десятичную систему счисления
+def in_dec_numsyst(x, syst): #перевод в десятичную систему счисления
     summa = 0
     x = str(x)
     for i in range(len(x)):
         summa += int(x[i]) * syst ** (len(x) - i - 1)
     return summa
 
-def from_dec_num_syst(x, syst): #перевод из десятичной системы счисления
+def from_dec_numsyst(x, syst): #перевод из десятичной системы счисления
     s = ''
     while x // syst != 0:
         s += str(x % syst)
@@ -28,7 +28,7 @@ def amount_words(s): #количество слов в строке :)
             k += 1
     return k
 
-def matrix_x_matrix(m1, m2): #Умножение двух матриц (для 10 класса) m1 * m2
+def matrix_x_matrix(m1, m2): #умножение двух матриц (для 10 класса) m1 * m2
     err = 'Error! This version does not work with matrices in which the number of rows of the first does not match the number of columns of the second! Try to find another algorithm or write your own.'
     r = []
     m = []
@@ -45,7 +45,7 @@ def matrix_x_matrix(m1, m2): #Умножение двух матриц (для 1
     else:
         return err
 
-def amount_num_in_matrix(mat, num): #Количество чисел num в двумерном массиве mat
+def amount_num_in_matrix(mat, num): #количество чисел num в двумерном массиве mat
     k = 0
     n = len(mat)
     for i in range(n):
