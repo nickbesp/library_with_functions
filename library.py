@@ -28,7 +28,7 @@ def amount_words(s): #количество слов в строке :)
             k += 1
     return k
 
-def matrix_x_matrix(m1, m2): #умножение двух матриц (для 10 класса) m1 * m2
+def multip_matrix(m1, m2): #умножение двух матриц (для 10 класса) m1 * m2
     err = 'Error! This version does not work with matrices in which the number of rows of the first does not match the number of columns of the second! Try to find another algorithm or write your own.'
     r = []
     m = []
