@@ -87,3 +87,17 @@ def mini(mass): #минимальное число в массиве
         if elem < min_:
             min_ = elem
     return min_
+
+def stand_dev(mass): #стандартное отклонение массива (гугли ; ) )
+    s = 0
+    s1 = 0
+    dev = 0
+    l = len(mass)
+    for i in range(l):
+        s += mass[i]
+    s = s / l
+    for i in range(l):
+        s1 += (mass[i] - s) ** 2
+    s1 = s1 / (l - 1)
+    dev = s1 ** (0.5)
+    return dev
