@@ -80,4 +80,10 @@ def prost(num): #проверка числа на простоту, возвра
         return True
     else:
         return False
-   
+  
+def mini(mass): #минимальное число в массиве 
+    min_ = mass[0]
+    for elem in mass:
+        if elem < min_:
+            min_ = elem
+    return min_
