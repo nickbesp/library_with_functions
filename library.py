@@ -53,3 +53,31 @@ def amount_num_in_matrix(mat, num): #количество чисел num в дв
             if mat[i][j] == num:
                 k += 1   
     return k    
+
+def fibonacci(amount): #возвращает массив с amount числами из ряда Фибоначчи
+    ch = 0
+    c = 1
+    a = 0
+    A = []
+    for i in range(amount):
+        a = ch
+        ch += c
+        c = a
+        A.append(ch)
+    return A
+
+def prost(num): #проверка числа на простоту, возвращает boolean
+    if num % 2 != 0:
+        k = 0
+        for i in range (1, num+1):
+            if num % i == 0:
+                k += 1
+        if k == 2:
+            return True
+        else:
+            return False
+    elif num == 2:
+        return True
+    else:
+        return False
+   
