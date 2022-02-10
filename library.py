@@ -5,11 +5,27 @@ def maxi(mass): #максимальное число в массиве
             max_ = elem
     return max_
 
-def in_dec_numsyst(x, syst): #перевод в десятичную систему счисления
+def in_dec_num_syst(x, syst): #перевод в десятичную систему счисления (теперь работает с системами больше 10)
     summa = 0
     x = str(x)
+    x1 = list()
     for i in range(len(x)):
-        summa += int(x[i]) * syst ** (len(x) - i - 1)
+        x1.append(x[i])
+    for i in range(len(x1)):
+        if x1[i] == 'A':
+            x1[i] = 10
+        elif x1[i] == 'B':
+            x1[i] = 11
+        elif x1[i] == 'c':
+            x1[i] = 12
+        elif x1[i] == 'D':
+            x1[i] = 13
+        elif x1[i] == 'E':
+            x1[i] = 14
+        elif x1[i] == 'F':
+            x1[i] = 15
+    for i in range(len(x1)):
+        summa += int(x1[i]) * syst ** (len(x1) - i - 1)
     return summa
 
 def from_dec_numsyst(x, syst): #перевод из десятичной системы счисления
