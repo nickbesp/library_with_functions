@@ -130,3 +130,12 @@ def sumMat(mat1, mat2):
         result.append(row)
         
     return result
+
+def multMatNum(matrix, num):
+    result = list()
+    for i in range(len(matrix)):
+        row = list()
+        for j in range(len(matrix)):
+            row.append(matrix[i][j] * num)
+        result.append(row)
+    return result
