@@ -118,7 +118,7 @@ def stand_dev(mass): #стандартное отклонение массива
     dev = s1 ** (0.5)
     return dev
 
-def sumMat(mat1, mat2):
+def sumMat(mat1, mat2): #Сложение двух матриц
     if len(a) != len(b) or len(a[0]) != len(b[0]):
         raise ValueError("Matrixes' sizes should be equal!")
     
@@ -131,7 +131,7 @@ def sumMat(mat1, mat2):
         
     return result
 
-def multMatNum(matrix, num):
+def multMatNum(matrix, num): #Умножение матрицы на число
     result = list()
     for i in range(len(matrix)):
         row = list()
