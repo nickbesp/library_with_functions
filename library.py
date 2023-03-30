@@ -117,3 +117,16 @@ def stand_dev(mass): #стандартное отклонение массива
     s1 = s1 / (l - 1)
     dev = s1 ** (0.5)
     return dev
+
+def sumMat(mat1, mat2):
+    if len(a) != len(b) or len(a[0]) != len(b[0]):
+        raise ValueError("Matrixes' sizes should be equal!")
+    
+    result = list()
+    for i in range(len(a)):
+        row = list()
+        for j in range(len(a)):
+            row.append(a[i][j] + b[i][j])
+        result.append(row)
+        
+    return result
