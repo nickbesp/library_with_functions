@@ -83,19 +83,18 @@ def fibonacci(amount): #возвращает массив с amount числам
     return A
 
 def prost(num): #проверка числа на простоту, возвращает boolean
+    if num == 2:
+        return True
+    if num == 1:
+        return False
     if num % 2 != 0:
         k = 0
-        for i in range (1, num+1):
+        for i in range (1, int(num ** 0.5) + 1):
             if num % i == 0:
-                k += 1
+                k += 2
         if k == 2:
             return True
-        else:
-            return False
-    elif num == 2:
-        return True
-    else:
-        return False
+    return False
   
 def mini(mass): #минимальное число в массиве 
     min_ = mass[0]
