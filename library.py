@@ -193,3 +193,50 @@ def adding(matrix, i, j):
 #Минор к элементу матрицы 2x2
 def minor(matrix):
     return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+class Quadratic:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+        
+    def branch(self):
+        if self.a > 0:
+            return 'up'
+        else:
+            return 'down'
+        
+    def x_sect(self):
+        dis = self.b**2 - 4*self.a*self.c
+        if dis < 0:
+            return 0
+        if dis == 0:
+            return 1
+        
+        x1 = (-self.b + dis**0.5) / (2*self.a)
+        x2 = (-self.b - dis**0.5) / (2*self.a)
+        if x1 == x2:
+            return 1
+        else:
+            return 2
+    
+    def y_sect(self):
+        return (0, self.c)
+    
+    def sections(self):
+        dis = self.b**2 - 4*self.a*self.c
+        if dis < 0:
+            return None
+        if dis == 0:
+            x = (-self.b) / (2*self.a)
+            return (x, 0.0)
+        
+        x1 = (-self.b + dis**0.5) / (2*self.a)
+        x2 = (-self.b - dis**0.5) / (2*self.a)
+        return ((min(x1, x2), 0.0), (max(x1, x2), 0.0))  
+    
+    def top(self):
+        x = (-self.b) / (2*self.a)
+        y = self.a * x ** 2 + self.b * x + self.c
+        return (x, y)
+
