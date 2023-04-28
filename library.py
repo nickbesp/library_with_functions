@@ -240,3 +240,76 @@ class Quadratic:
         y = self.a * x ** 2 + self.b * x + self.c
         return (x, y)
 
+#Крестики-нолики
+from random import randint
+
+class Board:
+    def __init__(self, height=3, width=3):
+        self.height = height
+        self.width = width
+        self.cells = [[''] for j in range(self.width) for i in range(self.height)]
+
+    def put(self, x, y, symb):
+        self.cells[x][y] = symb
+
+    def check(self, x, y):
+        return self.cells[x][y] == ''
+
+    def __str__(self):
+        for i in range(self.height):
+            print(*self.cells[i])
+
+    def checker(self, symb):
+        pass
+
+class Player:
+    def __init__(self, symbol):
+        self.symb = symbol
+
+    def coordinates(other):
+        x, y = map(int, input('Куда вы бы хотели сходить? \n').split())
+        while not other.check(x, y):
+            print('Данная клетка занята...')
+            x, y = map(int, input('Куда вы бы хотели сходить? \n').split())
+        else:
+            return (x, y)
+
+class Bot(Player):
+    def __init__(self, symbol):
+        self.symb = symbol
+
+    def choose(self, other):
+        x = randint(0, other.width)
+        y = randint(0, other.height)
+        while not other.check(x, y):
+            print('Бот думает...')
+            x = randint(0, other.width)
+            y = randint(0, other.height)
+        else:
+            return (x, y)
+
+
+if __name__ == "__main__":
+    symbol = input('Выберите знак, которым будете играть: \n')
+    while symbol == '' or len(symbol) != 1:
+        print('Символ должен быть длиной в один символ...')
+        symbol = input('Выберите знак, которым будете играть: \n')
+
+    #width, height = map(int, input('Назовите размерность поля: \n').split())
+    width = 3
+    height = 3
+    board = Board(height, width)
+    player = Player(symbol)
+
+    if symbol != 'X':
+        symbol1 = 'X'
+    else:
+        symbol1 = 'O'
+
+    bot = Bot(symbol1)
+
+    win = False
+    while not win:
+        coor = player.coordinates(board)
+        board.put(coor[0], coor[1])
+        #win = 
